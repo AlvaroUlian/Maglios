@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Maglio´s</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .image-container {
+            /* Controlar el tamaño de la imagen y asegurarse de que se ajuste dentro del contenedor */
+            max-width: 100%;
+            overflow: hidden;
+            /* Esto ocultará cualquier parte de la imagen que exceda el contenedor */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* La imagen ocupará todo el ancho del contenedor */
+            height: auto;
+            /* La altura se ajustará automáticamente para mantener la proporción */
+            border-radius: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">Maglio <span>´s</span></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="index.html" class="nav-item nav-link">Inicio</a>
+                    <a href="menu.html" class="nav-item nav-link active">Menú</a>
+                    <a href="products.html" class="nav-item nav-link active">Nuestros Productos</a>
+                    <a href="events.html" class="nav-item nav-link active">Eventos</a>
+                    <a href="feature.html" class="nav-item nav-link active">Nosotros</a>
+                    <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Menú</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Food Start -->
+    <div class="food mt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <i class="flaticon-cooking"></i>
+                        <h2>Almuerzos</h2>
+                        <p>Disfruta de nuestra selección de almuerzos saludables, diseñados para brindarte energía y
+                            nutrientes durante el día. Nuestras opciones incluyen una variedad de platos
+                            equilibrados
+                            con ingredientes frescos y naturales.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <i class="flaticon-fruits-and-vegetables"></i>
+                        <h2>Desayunos y meriendas</h2>
+                        <p>Comienza tu día con nuestros deliciosos desayunos saludables, creados para brindarte un
+                            impulso nutritivo desde la mañana.</p>
+
+                        <p>¿Necesitas un impulso entre comidas? Nuestras meriendas saludables son la opción perfecta
+                            para satisfacer tus antojos y mantener tus niveles de energía.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <i class="flaticon-cocktail"></i>
+                        <h2>Bebidas</h2>
+                        <p>Refresca tu día con nuestras bebidas saludables y deliciosas. Nuestra variedad de bebidas
+                            está diseñada para
+                            satisfacer tu sed mientras cuidas de tu bienestar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Food End -->
+
+    <!-- Menú Semanal Start-->
+    <div class="section-header text-center">
+        <h2>Menú de la semana</h2>
+        <h6 id="semana"></h6>
+
+        <script>
+            // Obtén la fecha actual
+            var fechaActual = new Date();
+
+            // Calcula la fecha de inicio de la semana (lunes)
+            var inicioSemana = new Date(fechaActual);
+            inicioSemana.setDate(fechaActual.getDate() - fechaActual.getDay() + 1);
+
+            // Calcula la fecha de fin de la semana (domingo)
+            var finSemana = new Date(fechaActual);
+            finSemana.setDate(fechaActual.getDate() - fechaActual.getDay() + 5);
+
+            // Formatea las fechas en el formato deseado (dd/mm)
+            var inicioSemanaFormat = inicioSemana.toLocaleDateString('es-ES', {
+                day: '2-digit',
+                month: '2-digit'
+            });
+            var finSemanaFormat = finSemana.toLocaleDateString('es-ES', {
+                day: '2-digit',
+                month: '2-digit'
+            });
+
+            // Muestra las fechas en el elemento <h6> con id "semana"
+            document.getElementById('semana').textContent = `Del ${inicioSemanaFormat} al ${finSemanaFormat}`;
+        </script>
+    </div>
+    <div class="food mt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <div class="image-container">
+                            <img src="img/poke.jfif" alt="Image">
+                        </div>
+                        <h2>Lunes</h2>
+                        <p><strong>Poke: fideos con verduras y carne o pollo</strong></p>
+                        <p><strong>Precio:</strong> $290.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada.</p>
+                        <p><strong>Precio:</strong> $350.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada y Postre.</p>
+                        <p><strong>Precio:</strong> $390.00</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <div class="image-container">
+                            <img src="img/tartaVerduramenu.jfif" alt="Image">
+                        </div>
+                        <h2>Martes</h2>
+                        <p><strong>Tarta de verduras con ensalada mixta</strong></p>
+                        <p><strong>Precio:</strong> $290.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada.</p>
+                        <p><strong>Precio:</strong> $350.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada y Postre.</p>
+                        <p><strong>Precio:</strong> $390.00</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <div class="image-container">
+                            <img src="img/canelonesMenu.jfif" alt="Image">
+                        </div>
+                        <h2>Miércoles</h2>
+                        <p><strong>Canelones de verdura / pollo</strong></p>
+                        <p><strong>Precio:</strong> $290.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada.</p>
+                        <p><strong>Precio:</strong> $350.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada y Postre.</p>
+                        <p><strong>Precio:</strong> $390.00</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <div class="image-container">
+                            <img src="img/polloPure.jpg" alt="Image">
+                        </div>
+                        <h2>Jueves</h2>
+                        <p><strong>Pollo al horno con puré</strong></p>
+                        <p><strong>Precio:</strong> $290.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada.</p>
+                        <p><strong>Precio:</strong> $350.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada y Postre.</p>
+                        <p><strong>Precio:</strong> $390.00</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-item">
+                        <div class="image-container">
+                            <img src="img/tacosMenu.jpg" alt="Image">
+                        </div>
+                        <h2>Viernes</h2>
+                        <p><strong>Tacos</strong></p>
+                        <p><strong>Precio:</strong> $290.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada.</p>
+                        <p><strong>Precio:</strong> $350.00</p>
+                        <p><strong>Acompañado de:</strong> Jugo Fresco o agua saborizada y Postre.</p>
+                        <p><strong>Precio:</strong> $390.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menú Semanal End -->
+
+    <!-- Boton Whatsapp Start -->
+    <div style="align-content: center;">
+        <span>
+            <a href="https://wa.me/59898275138"
+                style="background-color: #ffffff; position: fixed; bottom: 15px; right: 80px; color: #FFF; border-radius: 50px; align-content: center; text-align: center; box-shadow: 2px 2px 3px #999; z-index: 9999999;"
+                target="_blank">
+                <img src="img/whatsapp.png">
+            </a>
+        </span>
+    </div>
+    <!-- Boton Whatsapp End -->
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
